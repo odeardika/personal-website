@@ -2,26 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.blob-1 {
+    border-radius: 27% 73% 40% 60% / 34% 22% 78% 66% ;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.blob-2 {
+    border-radius: 59% 41% 40% 60% / 80% 59% 41% 20% ;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.blob-3 {
+    border-radius: 31% 69% 44% 56% / 34% 9% 91% 66% ;
 }
