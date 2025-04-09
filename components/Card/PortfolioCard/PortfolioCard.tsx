@@ -1,14 +1,14 @@
 import React from 'react';
 import Image from 'next/image';
-import tempImage from "@public/assets/images/temp.jpg";
+import { PortfolioCardProps } from '@/types/portfolioCard.types';
 
-export default function PortfolioCard() {
+export default function PortfolioCard({props} : {props: PortfolioCardProps}) {
   return (
     <div className='bg-white rounded-[10px] w-80'>
-        <Image src={tempImage} alt="Project image" className='p-4 rounded-[20px]'/>
+        <Image src={props.image} alt="Project image" className='p-4 rounded-[20px]'/>
         <div className='px-4 pb-4'>
-        <h3 className="text-lg font-semibold">Project Title</h3>
-        <a className="text-sm font-light" href='#'>Open</a>
+        <h3 className="text-lg font-semibold">{props.title}</h3>
+        <a className="text-sm font-light" href={props.link} target="_blank" rel="noopener noreferrer">Open</a>
         </div>
     </div>
   )
