@@ -15,7 +15,7 @@ const HamburgerButton = ({onClick} : HamburgerButtonProps) => {
       id={isActive ? "hamburger-active" : "hamburger"}
       name="hamburger"
       type="button"
-      className=" right-4 md:hidden "
+      className=" right-4 md:hidden"
       onClick={handleOnClick}
     >
       <span className="hamburger-line origin-bottom-left"></span>
