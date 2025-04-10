@@ -8,7 +8,7 @@ export default function Home() {
             <div className="basis-1/2 flex flex-col gap-10 ">
                 <div className="flex flex-col gap-4">
                     <h1 className="text-4xl xl:text-5xl text-dark_blue font-extrabold xl:font-semibold">Ode Ardika 🖐️</h1>
-                    <p className="text-xl font-extralight text-slate-500 text-justify">An undergraduate Informatics Student who interested on Design Graphic and Photography. I’m looking forward for new experience in design interface, user experience, and Front-End Web developement.
+                    <p className="text-xl font-extralight text-slate-500 text-justify">An undergraduate Informatics Student who interested on Website and Software Developer.  I am committed to continuous learning and growth, with a strong work ethic and a collaborative approach to delivering high-quality solutions.
                     </p>
                 </div>
                 <div>
