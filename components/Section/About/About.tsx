@@ -19,7 +19,7 @@ I’m Ode, an undergraduate Informatics Student, Software Developer, Website Dev
         src={profile} 
         alt='Profile Image' 
         width={150} height={150} 
-        className='w-36 rounded-2xl md:h-full md:w-auto' />
+        className='w-36 rounded-2xl md:h-full md:w-auto bg-white' />
         <div className='flex flex-col items-center md:items-start md:w-4/12 md:gap-4'>
           <p className='text-justify text-slate-500 text-xl'>{aboutDesc}</p>
           <div className='flex mt-8 md:mt-0'>

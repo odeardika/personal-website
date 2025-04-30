@@ -17,7 +17,7 @@ export default function Home() {
             </div>
             <div className="flex justify-end grow">
                 <div className="">
-                    <Image className="border-2 border-gray_blue rounded-full object-cover h-72 w-52 lg:h-96 lg:w-72 xl:h-96 xl:w-72 blob-3 " src={profile} alt="profile" width={700} height={700} />
+                    <Image className="border-2 border-gray_blue rounded-full object-cover h-72 w-52 lg:h-96 lg:w-72 xl:h-96 xl:w-72 blob-3 bg-white " src={profile} alt="profile" width={700} height={700} />
                 </div>
             </div>
         </section>
