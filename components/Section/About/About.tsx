@@ -8,7 +8,7 @@ export default function About() {
 I’m Ode, an undergraduate Informatics Student, Software Developer, Website Developer, and Machine Learning Developer. I’m looking forward to new experiences in software development and learning new technologies.
 `.trim();
   return (
-    <section className='px-10 md:px-5'>
+    <section className='px-10 md:px-5 mb-20'>
       <div className='flex flex-col gap-2 md:gap-4 items-center'>
           <h2 className='font-semibold text-2xl md:text-4xl lg:text-5xl text-dark_blue'>About Me</h2>
           <p className='text-dark_blue font-light text-xs md:text-base lg:text-xl'>My Introduction</p>
