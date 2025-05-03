@@ -1,7 +1,7 @@
 'use client';
 import { useState } from "react";
 import CategoryComp from "./CategoryComp/CategoryComp";
-
+import SkillList from "./SkillList/SkillList";
 
 
 export default function Skills() {
@@ -22,7 +22,6 @@ export default function Skills() {
             setMachileLearningCat(!machileLearningCat);
         }
     };
-
     const FrontendHandler = () => {
         if (frontendCat) {
             setFrontendCat(!frontendCat);
@@ -34,7 +33,6 @@ export default function Skills() {
             setFrontendCat(!frontendCat);
         }
     };
-
     const BackendHandler = () => {
         if (backendCat) {
             setBackendCat(!backendCat);
@@ -46,7 +44,6 @@ export default function Skills() {
             setBackendCat(!backendCat);
         }
     };
-
     const FullstackHandler = () => {
         if (fullstackCat) {
             setFullstackCat(!fullstackCat);
@@ -58,7 +55,6 @@ export default function Skills() {
             setFullstackCat(!fullstackCat);
         }
     };
-
     const AllHandler = () => {
         if (allCat) {
             setAllCat(!allCat);
@@ -80,17 +76,16 @@ export default function Skills() {
             </div>
 
             <div className='category-skill'>
-                <ul className="flex gap-4 text-wrap justify-center my-2">
+                <ul className="flex gap-4 text-wrap justify-center my-2 flex-wrap">
                     <CategoryComp onText="Machine Learning" offText="ML" condition={machileLearningCat} onClick={MLHandler}/>
                     <CategoryComp onText="Frontend" offText="FE" condition={frontendCat} onClick={FrontendHandler}/>
                     <CategoryComp onText="Backend" offText="BE" condition={backendCat} onClick={BackendHandler}/>
                     <CategoryComp onText="Fullstack" offText="FS" condition={fullstackCat} onClick={FullstackHandler}/>
                     <CategoryComp onText="ALL" offText="ALL" condition={allCat} onClick={AllHandler}/>
-                    
                 </ul>
-
             </div>
             <div className='list-skill'>
+                <SkillList />
 
             </div>
         </section>
