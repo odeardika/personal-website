@@ -55,7 +55,7 @@ export default function Skills() {
     };
 
     return (
-        <section className="flex flex-col items-center justify-center gap-8 py-20">
+        <section id="skill-section" className="flex flex-col items-center justify-center gap-8 py-20">
             <div className="flex flex-col gap-2 md:gap-4 items-center">
                 <h2 className="font-semibold text-2xl md:text-4xl lg:text-5xl text-dark_blue">
                     My Skills
@@ -66,7 +66,7 @@ export default function Skills() {
             </div>
 
             <div className="category-skill">
-                <ul className="flex gap-4 text-wrap justify-center my-2 flex-wrap">
+                <ul className="flex gap-4 justify-center px-8 my-2 flex-wrap">
                     <CategoryComp
                         onText="Machine Learning"
                         offText="ML"

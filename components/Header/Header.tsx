@@ -8,10 +8,9 @@ import Sidebar from '@components/Sidebar/Sidebar';
 export default function Header() {
   const menuList: MenuList[] = [
     { id: 1, name: 'Home', href: '#' },
-    { id: 2, name: 'About', href: '#' },
-    { id: 3, name: 'Skills', href: '#' },
-    { id: 4, name: 'Project', href: '#' },
-    { id: 5, name: 'Contact', href: '#' },
+    { id: 2, name: 'About', href: '#about-section' },
+    { id: 3, name: 'Skills', href: '#skill-section' },
+    { id: 4, name: 'Project', href: '#project-section' },
   ];
 
   // check is page on y-0 or not
@@ -37,7 +36,7 @@ export default function Header() {
     setIsSidebarOpen((prevState) => !prevState);
   }
   return (
-    <header className={`flex justify-between sticky top-0 bg-white ${isPageOnTop? "" : "shadow-sm"} px-8 sm:px-16 md:px-24 lg:px-40 xl:px-48 py-8`}>
+    <header className={`flex justify-between sticky top-0 bg-white ${isPageOnTop? "" : "shadow-sm bg-opacity-75"} px-8 sm:px-16 md:px-24 lg:px-40 xl:px-48 py-8`}>
         <div className="flex basis-1/2">
           <h3 className="text-2xl font-semibold">odeardika.</h3>
         </div>
