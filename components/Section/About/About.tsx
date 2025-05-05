@@ -25,7 +25,7 @@ I’m Ode, an undergraduate Informatics Student, Software Developer, Website Dev
           <div className='flex mt-8 md:mt-0'>
             <Link 
             className='bg-dark_blue text-white py-3 md:py-4 px-8 text-sm font-semibold rounded-full md:rounded-2xl mt-4'
-            href='/assets/doc/Putu Ode Irfan Ardika - CVATS.pdf' 
+            href='https://drive.google.com/file/d/1Jr0f-HzK3KHaufRidvsMo1710aICksWa/view?usp=sharing' 
             target='_blank'
             >
               Download My CV
