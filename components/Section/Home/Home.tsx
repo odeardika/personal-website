@@ -7,9 +7,10 @@ export default function Home() {
         <section className="flex flex-col-reverse px-10 lg:px-48 xl:px-48 xl:flex-row xl:h-screen items-center gap-4 xl:gap-0 lg:flex-row lg:h-screen py-4">
             <div className="basis-1/2 flex flex-col gap-10 ">
                 <div className="flex flex-col gap-4">
-                    <h1 className="text-4xl xl:text-5xl text-dark_blue font-extrabold xl:font-semibold">Ode Ardika 🖐️</h1>
-                    <p className="text-xl font-extralight text-slate-500 text-justify">An undergraduate Informatics Student who interested on Website and Software Developments.  I am committed to continuous learning and growth, with a strong work ethic and a collaborative approach to delivering high-quality solutions.
+                    <h1 className="text-4xl xl:text-5xl text-dark_blue font-extrabold xl:font-semibold">Hi, I’m Ode <span className='wave'>👋</span></h1>
+                    <p className="text-4xl font-thin text-slate-500">A passionate software developer who loves building a beautiful modern <span className='text-sky-500 font-black'>applications and websites.</span>
                     </p>
+                    <p className="text-xl font-extralight text-slate-500 text-justify">I thrive on solving problems, writing clean code, and learning new technologies every day.</p>
                 </div>
                 <div>
                     <button className="bg-dark_blue text-white py-4 px-6 text-base font-semibold rounded-xl">Say Hello</button>
