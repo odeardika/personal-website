@@ -4,22 +4,45 @@ import Image from 'next/image';
 import profile from "@public/assets/images/profile_img.png";
 import { TypeAnimation } from 'react-type-animation';
 import { motion } from 'motion/react';
+import { useEffect, useState } from 'react';
 
 
 
 export default function Home() {
-    //     const typeequence={[
-    //     // Same substring at the start will only be typed once, initially
-    //     'We produce food for Mice',
-    //     1000,
-    //     'We produce food for Hamsters',
-    //     1000,
-    //     'We produce food for Guinea Pigs',
-    //     1000,
-    //     'We produce food for Chinchillas',
-    //     1000,
-    //   ]};
+    const blobShapes = [
+        '25% 75% 70% 30% / 40% 60% 40% 60%', // blob-1
+        '55% 45% 55% 45% / 60% 40% 60% 40%', // blob-2
+        '45% 55% 35% 65% / 60% 35% 65% 40%',  // blob-3
+        '40% 60% 60% 40% / 70% 40% 60% 30%',  // blob-4
+        '30% 70% 60% 40% / 50% 40% 60% 50%',  // blob-5
+        '60% 40% 30% 70% / 50% 60% 40% 50%',  // blob-6
+    ];
 
+    const [blobRadius, setBlobRadius] = useState(blobShapes[0]);
+
+    const blobShapes2 = [
+        '59% 41% 40% 60% / 80% 59% 41% 20%', // blob-1
+        '27% 73% 40% 60% / 34% 22% 78% 66%', // blob-2
+        '31% 69% 44% 56% / 34% 9% 91% 66%',  // blob-3
+    ];
+
+    const [blobRadius2, setBlobRadius2] = useState(blobShapes2[0]);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setBlobRadius(prev => {
+                const currentIndex = blobShapes.indexOf(prev);
+                return blobShapes[(currentIndex + 1) % blobShapes.length];
+            })
+            setBlobRadius2(prev => {
+                const currentIndex = blobShapes2.indexOf(prev);
+                return blobShapes2[(currentIndex + 1) % blobShapes2.length];
+            })
+        }, 2000);
+
+        return () => clearInterval(interval);
+
+    }, [])
     return (
         <section
             data-aos="fade-up"
@@ -62,8 +85,16 @@ export default function Home() {
             </div>
 
             <div className="flex justify-end grow">
-                <div className="">
-                    <Image className="border-2 border-gray_blue rounded-full object-cover h-72 w-52 lg:h-96 lg:w-72 xl:h-96 xl:w-72 blob-3 bg-white " src={profile} alt="profile" width={700} height={700} />
+                <div
+                    style={{
+                        borderRadius: blobRadius2,
+                    }}
+                    className="border-2 border-gray_blue blob">
+                    <Image
+                        style={{
+                            borderRadius: blobRadius,
+                        }}
+                        className="border-2 border-gray_blue rounded-full object-cover h-72 w-52 lg:h-96 lg:w-72 xl:h-96 xl:w-72 bg-white blob" src={profile} alt="profile" width={700} height={700} />
                 </div>
             </div>
 
