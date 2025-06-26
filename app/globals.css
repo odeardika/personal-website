@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+[data-aos] {
+  pointer-events: none;
+}
+.aos-animate {
+  pointer-events: auto;
+}
+.aos-init[data-aos][data-aos].aos-animate {
+  transform: unset;
+}
+
 .blob-1 {
     border-radius: 27% 73% 40% 60% / 34% 22% 78% 66% ;
 }

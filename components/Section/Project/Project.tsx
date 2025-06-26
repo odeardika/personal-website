@@ -21,7 +21,7 @@ const portfolioCardData: PortfolioCardProps[] = [
 
 export default function Project() {
   return (
-    <section id='project-section' className='flex flex-col items-center justify-center gap-8 py-20'>
+    <section data-aos="fade-up" id='project-section' className='flex flex-col items-center justify-center gap-8 py-20'>
         <div className='flex flex-col gap-2 md:gap-4 items-center'>
             <h2 className='font-semibold text-2xl md:text-4xl lg:text-5xl text-dark_blue'>My Portfolio</h2>
             <p className='text-dark_blue font-light text-xs md:text-base lg:text-xl'>Recent Works</p>
