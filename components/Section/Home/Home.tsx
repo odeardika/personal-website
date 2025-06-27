@@ -28,7 +28,6 @@ export default function Home() {
     ];
 
     const [blobRadius2, setBlobRadius2] = useState(blobShapes2[0]);
-    // const [blobRadius3, setBlobRadius3] = useState(blobShapes3[0]);
 
     useEffect(() => {
         const interval = setInterval(() => {
