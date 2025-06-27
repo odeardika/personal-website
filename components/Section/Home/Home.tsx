@@ -75,7 +75,6 @@ export default function Home() {
                                     1000,
                                 ]}
                                 speed={50}
-                                className=''
                                 repeat={Infinity}
                             />
                         </div>
