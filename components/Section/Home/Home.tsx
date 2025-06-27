@@ -23,10 +23,12 @@ export default function Home() {
     const blobShapes2 = [
         '59% 41% 40% 60% / 80% 59% 41% 20%', // blob-1
         '27% 73% 40% 60% / 34% 22% 78% 66%', // blob-2
-        '31% 69% 44% 56% / 34% 9% 91% 66%',  // blob-3
+        '60% 40% 30% 70% / 50% 60% 40% 50%', // blob-3
+
     ];
 
     const [blobRadius2, setBlobRadius2] = useState(blobShapes2[0]);
+    // const [blobRadius3, setBlobRadius3] = useState(blobShapes3[0]);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -34,26 +36,33 @@ export default function Home() {
                 const currentIndex = blobShapes.indexOf(prev);
                 return blobShapes[(currentIndex + 1) % blobShapes.length];
             })
+            
+            
+        }, 2000);
+        const interval2 = setInterval(() => {
             setBlobRadius2(prev => {
                 const currentIndex = blobShapes2.indexOf(prev);
                 return blobShapes2[(currentIndex + 1) % blobShapes2.length];
             })
-        }, 2000);
-
-        return () => clearInterval(interval);
+        }, 1000)
+            
+        return () => {
+            clearInterval(interval);
+            clearInterval(interval2);
+        };
 
     }, [])
     return (
         <section
             data-aos="fade-up"
-            className="flex flex-col-reverse px-10 lg:px-48 xl:px-48 xl:flex-row xl:h-screen items-center gap-4 xl:gap-0 lg:flex-row lg:h-screen py-4">
+            className="flex flex-col-reverse px-10 md:flex-row md:px-24 xl:px-48 items-center gap-4 lg:gap-0 md:h-screen py-4">
 
             <div className="basis-7/12 flex flex-col gap-6 ">
                 <div className="flex flex-col gap-2">
-                    <h1 className="text-4xl xl:text-5xl text-dark_blue font-extrabold xl:font-semibold">Hi, I’m Ode <span className='wave'>👋</span></h1>
+                    <h1 className="text-3xl md:text-3xl lg:text-5xl text-dark_blue mid-extra-w md:extra-w font-extrabold lg:font-semibold">Hi, I’m Ode <span className='wave'>👋</span></h1>
                     <div>
-                        <p className="text-4xl font-thin text-dark_blue">A passionate software developer who loves</p>
-                        <div className='text-4xl text-sky-400 font-black'>
+                        <p className="text-3xl md:text-3xl lg:text-4xl font-thin text-dark_blue">A passionate software developer who loves</p>
+                        <div className='text-3xl md:text-3xl lg:text-5xl text-sky-400 font-black less-extra-w'>
                             <TypeAnimation
                                 sequence={[
                                     // Same substring at the start will only be typed once, initially
@@ -72,7 +81,7 @@ export default function Home() {
                             />
                         </div>
                     </div>
-                    <p className="text-xl font-thin text-slate-400">I design, build, and maintain applications that are scalable, efficient, and user-friendly.</p>
+                    <p className="text-base md:text-base lg:text-xl font-thin text-slate-400">I design, build, and maintain applications that are scalable, efficient, and user-friendly.</p>
                 </div>
                 <div>
                     <motion.button
@@ -87,14 +96,20 @@ export default function Home() {
             <div className="flex justify-end grow">
                 <div
                     style={{
-                        borderRadius: blobRadius2,
+                        // borderRadius: blobRadius3,
                     }}
-                    className="border-2 border-gray_blue blob">
-                    <Image
+                    className="">
+                    <div
                         style={{
-                            borderRadius: blobRadius,
+                            borderRadius: blobRadius2,
                         }}
-                        className="border-2 border-gray_blue rounded-full object-cover h-72 w-52 lg:h-96 lg:w-72 xl:h-96 xl:w-72 bg-white blob" src={profile} alt="profile" width={700} height={700} />
+                        className="border-2 border-gray_blue blob">
+                        <Image
+                            style={{
+                                borderRadius: blobRadius,
+                            }}
+                            className="border-2 border-gray_blue rounded-full object-cover h-72 w-52 lg:h-96 lg:w-72 xl:h-96 xl:w-72 bg-white blob" src={profile} alt="profile" width={700} height={700} />
+                    </div>
                 </div>
             </div>
 
