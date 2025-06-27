@@ -37,7 +37,7 @@ export default function Home() {
             })
             
             
-        }, 2000);
+        }, 1500);
         const interval2 = setInterval(() => {
             setBlobRadius2(prev => {
                 const currentIndex = blobShapes2.indexOf(prev);
@@ -101,7 +101,7 @@ export default function Home() {
                             style={{
                                 borderRadius: blobRadius,
                             }}
-                            className="border-2 border-gray_blue object-cover h-72 w-52 lg:h-96 lg:w-72 xl:h-96 xl:w-72 bg-white" src={profile} alt="profile" width={700} height={700} />
+                            className="border-2 blob border-gray_blue object-cover h-72 w-52 lg:h-96 lg:w-72 xl:h-96 xl:w-72 bg-white" src={profile} alt="profile" width={700} height={700} />
                     </div>
                 
             </div>
