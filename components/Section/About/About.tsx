@@ -1,29 +1,38 @@
 import React from 'react';
 import Image from 'next/image';
-import profile from "@public/assets/images/profile_img.png";
+import profile from "@/public/assets/images/about_img.png";
 import Link from 'next/link';
 
 export default function About() {
-  const aboutDesc = `
-I’m Ode, an undergraduate Informatics Student, Software Developer, Website Developer, and Machine Learning Developer. I’m looking forward to new experiences in software development and learning new technologies.
-`.trim();
   return (
     <section
-    data-aos="fade-up"
-    className='flex flex-col items-center justify-center gap-8 py-20 px-10 md:px-5' id='about-section'>
+      data-aos="fade-up"
+      className='flex flex-col items-center gap-8 md:h-screen  px-10 md:px-48' id='about-section'>
       <div className='flex flex-col gap-2 md:gap-4 items-center'>
-        <h2 className='font-semibold text-2xl md:text-4xl lg:text-5xl text-dark_blue'>About Me</h2>
+        <h2 className='font-semibold text-2xl md:text-4xl lg:text-5xl md:extra-w text-dark_blue'>About Me</h2>
         <p className='text-dark_blue font-light text-xs md:text-base lg:text-xl'>My Introduction</p>
       </div>
 
-      <div className='flex justify-center mt-4 flex-col md:flex-row items-center gap-4 md:gap-16'>
+      <div className='flex justify-between mt-4 flex-col md:flex-row items-center gap-4 md:gap-16'>
         <Image
           src={profile}
           alt='Profile Image'
           width={150} height={150}
-          className='w-36 rounded-2xl md:h-full md:w-auto bg-white' />
-        <div className='flex flex-col items-center md:items-start md:w-4/12 md:gap-4'>
-          <p className='text-justify text-slate-500 text-xl'>{aboutDesc}</p>
+          className='w-[36rem] h-52 rounded-2xl md:h-[36rem] md:w-auto bg-white' />
+
+        <div className='flex flex-col items-center md:items-start flex-grow justify-between h-full py-16'>
+
+          <div className='flex flex-col gap-5'>
+            <p className='text-justify font-semibold text-slate-900 text-3xl'>I&apos;m Ode — a software developer with a background in Computer Science who enjoys turning ideas into real, working applications.</p>
+
+            <p className='text-justify text-slate-500 text-lg'>I specialize in building full-stack web apps using <span className='text-sky-400'>React</span>, <span className='text-sky-400'>Node.js</span>, and modern tools like <span className='text-sky-400'>Tailwind CSS</span>. Clean code, beautiful UI, and solving real problems — <span className='italic'>that&apos;s what gets me excited.</span></p>
+
+            <p className='text-justify text-slate-400 text-base'>I&apos;m always exploring new tech, and I enjoy diving into areas like <span className='text-sky-300'>machine learning</span> and <span className='text-sky-300'>design</span> when the project calls for it.</p>
+
+            <p className='text-justify text-base text-slate-700 font-semibold'>Whether it’s front-end, back-end, or figuring out how to glue everything together — <span className='text-sky-500'>I just love building things that work.</span></p>
+
+          </div>
+
           <div className='flex mt-8 md:mt-0'>
             <Link
               className='bg-dark_blue text-white py-3 md:py-4 px-8 text-sm font-semibold rounded-full md:rounded-2xl mt-4'
@@ -33,7 +42,9 @@ I’m Ode, an undergraduate Informatics Student, Software Developer, Website Dev
               Download My CV
             </Link>
           </div>
+
         </div>
+
 
       </div>
     </section>

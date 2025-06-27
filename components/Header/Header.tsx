@@ -11,6 +11,7 @@ export default function Header() {
     { id: 2, name: 'About', href: '#about-section' },
     { id: 3, name: 'Skills', href: '#skill-section' },
     { id: 4, name: 'Project', href: '#project-section' },
+    
   ];
 
   // check is page on y-0 or not
