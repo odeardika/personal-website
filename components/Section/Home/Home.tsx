@@ -96,7 +96,7 @@ export default function Home() {
                     style={{
                         // borderRadius: blobRadius3,
                     }}
-                    className="">
+                    
                     <div
                         style={{
                             borderRadius: blobRadius2,
