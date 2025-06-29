@@ -54,7 +54,7 @@ export default function Home() {
     return (
         <section
             data-aos="fade-up"
-            className="flex flex-col-reverse px-10 md:flex-row md:px-24 xl:px-48 items-center gap-4 lg:gap-0 md:h-screen py-4">
+            className="flex flex-col-reverse px-10 md:flex-row md:px-24 xl:px-48 items-center gap-4 lg:gap-0 md:h-screen py-4 bg-zinc-50">
 
             <div className="basis-7/12 flex flex-col gap-6 ">
                 <div className="flex flex-col gap-2">
