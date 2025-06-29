@@ -29,6 +29,14 @@
   /* animation: blob-step 6s infinite steps(1, end), pulseZoom 6s infinite ease-in-out; */
 }
 
+.about-bg {
+  background: url("/assets/images/background/about.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+}
+
 @keyframes pulseZoom {
   0%, 33.33%, 66.66%, 100% {
     transform: scale(1);
