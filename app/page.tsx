@@ -3,7 +3,7 @@ import About from "@/components/Section/About/About";
 import HomeSection from "@/components/Section/Home/Home";
 import Project from "@/components/Section/Project/Project";
 import Footer from "@/components/Footer/Footer";
-import Skills from "@/components/Section/Skills/Skills";
+// import Skills from "@/components/Section/Skills/Skills";
 
 export default function Home() {
   return (
@@ -12,7 +12,7 @@ export default function Home() {
       <HomeSection />
       <About />
 
-      <Skills />
+      {/* <Skills /> */}
       <Project />
       <Footer />
 

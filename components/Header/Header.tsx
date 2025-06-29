@@ -9,8 +9,9 @@ export default function Header() {
   const menuList: MenuList[] = [
     { id: 1, name: 'Home', href: '#' },
     { id: 2, name: 'About', href: '#about-section' },
-    { id: 3, name: 'Skills', href: '#skill-section' },
-    { id: 4, name: 'Project', href: '#project-section' },
+    // { id: 3, name: 'Skills', href: '#skill-section' },
+    { id: 3, name: 'Project', href: '#project-section' },
+    
   ];
 
   // check is page on y-0 or not
