@@ -1,25 +1,36 @@
+'use client';
 import React from 'react';
+import { useEffect, useState } from 'react';
 import PortfolioCard from '@components/Card/PortfolioCard/PortfolioCard';
-import { PortfolioCardProps } from '@/types/portfolioCard.types';
-import pesonaKubuImage from '@public/assets/portfolio/pesona-kubu.png';
-import envSongFinderImage from '@public/assets/portfolio/env-song-finder.png';
+import { PortfolioCardProps } from '@/types/portfolioCard';
 
-const portfolioCardData: PortfolioCardProps[] = [
-  {
-    id: 1,
-    title: 'Pesona Kubu',
-    image: pesonaKubuImage,
-    link: 'https://pesona-kubu.vercel.app/',
-  },
-  {
-    id: 2,
-    title: 'Environment Songs Finder',
-    image: envSongFinderImage,
-    link: 'https://enviroment-songs-finder.streamlit.app/',
-  },
-];
+
+// import pesonaKubuImage from '@public/assets/portfolio/pesona-kubu.png';
+// import envSongFinderImage from '@public/assets/portfolio/env-song-finder.png';
+
+// const portfolioCardData: PortfolioCardProps[] = [
+//   {
+//     id: 1,
+//     title: 'Pesona Kubu',
+//     image: "https://raw.githubusercontent.com/odeardika/personal-project-img/2d767a11843750bea7acffa7b37dd2fe1078d7c9/images/1/0.png",
+//     link: 'https://pesona-kubu.vercel.app/',
+//   },
+//   {
+//     id: 2,
+//     title: 'Environment Songs Finder',
+//     image: envSongFinderImage,
+//     link: 'https://enviroment-songs-finder.streamlit.app/',
+//   },
+// ];
 
 export default function Project() {
+  const [project, setProject] = useState<PortfolioCardProps[]>([]);
+
+  useEffect(() => {
+    fetch('/api/project')
+      .then(res => res.json())
+      .then(data => setProject(data));
+  }, [])
   return (
     <section data-aos="fade-up" id='project-section' className='flex flex-col items-center justify-center gap-8 py-20 bg-zinc-50'>
         <div className='flex flex-col gap-2 md:gap-4 items-center'>
@@ -28,7 +39,7 @@ export default function Project() {
         </div>
 
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 lg:gap-10 px-10 lg:px-48 xl:px-48'>
-            {portfolioCardData.map((item) => (
+            {project.map((item) => (
                 <PortfolioCard key={item.id} props={item} />
             ))}
         </div>
