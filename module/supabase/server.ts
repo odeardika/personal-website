@@ -30,8 +30,6 @@ export async function getProjectHome() {
   const showProject = data ? data.slice(0, 4) : [];
   const projects = showProject.map(async (data) => {
     const temp = data;
-    // console.log(temp);
-    // console.log("==================");
 
       const { data: imgData } = await supabase
         .from("project_img")
@@ -40,6 +38,15 @@ export async function getProjectHome() {
       temp.preview_img = imgData && imgData.length > 0 ? imgData[0].img_url : null;
       return temp;
     });
-    // console.log(projects);
+
   return Promise.all(projects);
 }
+
+export async function searchProject(query: string) {
+  const { data, error } = await supabase.from('projects').select().like('project_title', `%${query}%`);
+
+  if (error) {
+    return error;
+  }
+  return data;
+} 
