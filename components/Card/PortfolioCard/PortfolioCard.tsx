@@ -14,7 +14,7 @@ export default function PortfolioCard({ props, index }: { props: PortfolioCardPr
   return (
     <div className={`bg-white rounded-[10px] shadow-xl w-100 hover:cursor-pointer duration-300 md:hover:scale-110 transition-transform flex flex-col justify-between ${originPosition[index]}`}>
 
-      <Image src={`${props.preview_img}`} width={0} height={0} alt="Project image" unoptimized={true} className='p-4 w-full h-auto rounded-[20px]' />
+      <Image src={`${props.project_img}`} width={0} height={0} alt="Project image" unoptimized={true} className='p-4 w-full h-auto rounded-[20px]' />
       <div className='px-4 pb-4 flex flex-col flex-grow justify-between'>
         <div>
           <h3 className="text-2xl md:text-xl xl:text-2xl my-2 font-semibold text-dark_blue ">{props.project_title}</h3>
