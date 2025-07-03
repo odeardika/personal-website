@@ -5,5 +5,5 @@ export interface PortfolioCardProps {
   project_desc: string;
   website_url: string | null;
   github_url: string | null;
-  preview_img: string;
+  project_img: string;
 }
