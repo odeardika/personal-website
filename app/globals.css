@@ -29,6 +29,11 @@
   /* animation: blob-step 6s infinite steps(1, end), pulseZoom 6s infinite ease-in-out; */
 }
 
+input:focus {
+   outline: none;
+   border: specify yours;
+}
+
 .about-bg {
   background: url("/assets/images/background/about-mobile.png");
   background-repeat: no-repeat;
