@@ -1,7 +1,42 @@
-import React from 'react';
+'use client'
+import React, {} from 'react';
+import { useState } from 'react';
 import Header from '@/components/Header/Header';
+import { PortfolioCardProps } from '@/types/portfolioCard';
 
-function page() {
+
+
+function Page() {
+  const [projects, setProjects] = useState<PortfolioCardProps[]>([]);
+  const [searchBar, setSearchBar] = useState("");
+  
+    // useEffect(() => {
+    //   fetch('/api/project', {
+    //     method : "POST",
+    //     body : JSON.stringify({
+    //       "search" : searchBar
+    //     })
+
+    //   })
+    //     .then(res => res.json())
+    //     .then(data => setProjects(data));
+    // }, [searchBar]);
+
+    const handleOnTyping = async (e: React.ChangeEvent<HTMLInputElement>) => {
+      setSearchBar(e.target.value);
+
+      const data = await fetch('/api/project', {
+        method: "POST",
+        body: JSON.stringify({
+          "search": e.target.value
+        })
+      });
+
+      const project = await data.json() as PortfolioCardProps[];
+
+      setProjects(project);
+      console.log(projects);
+    }
   return (
     <main className='bg-zinc-50'>
       <Header />
@@ -14,7 +49,7 @@ function page() {
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className="bi bi-search h-4 w-4 md:h-6 md:w-6" viewBox="0 0 16 16">
               <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
             </svg>
-            <input type="text" className='w-full bg-transparent' placeholder='Search project by name' />
+            <input type="text" className='w-full bg-transparent' placeholder='Search project by name' value={searchBar} onChange={handleOnTyping} />
           </div>
 
           <button className='bg-sky-500 text-white px-4 py-1 md:px-8 md:py-2 rounded-xl h-10 md:h-14'>
@@ -23,10 +58,19 @@ function page() {
 
         </div>
 
+
       </section>
+
+      <div className='grid grid-cols-2 bg-slate-100 w-full'>
+        {!(projects.length > 0)? "" : projects.map(project => (
+          <div key={project.id}>
+            <p>{project.project_title}</p>
+          </div>
+        ))}
+      </div>
 
     </main>
   )
 }
 
-export default page
+export default Page;
