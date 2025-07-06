@@ -10,9 +10,10 @@ export async function GET() {
 
 export async function POST(req : Request) {
     const { search } = await req.json();
-    if (search) {
+    if (search === "" || search) {
         const projects = await searchProject(search);
-        return Response.json({projects});
+        // console.log)÷;
+        return Response.json(projects);
     }
     return Response.json({});
 }

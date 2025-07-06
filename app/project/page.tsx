@@ -1,8 +1,11 @@
 'use client'
-import React, {} from 'react';
-import { useState } from 'react';
+import React from 'react';
+import { useState, useEffect } from 'react';
 import Header from '@/components/Header/Header';
 import { PortfolioCardProps } from '@/types/portfolioCard';
+import PortfolioCard from '@/components/Card/PortfolioCard/PortfolioCard';
+
+
 
 
 
@@ -10,32 +13,22 @@ function Page() {
   const [projects, setProjects] = useState<PortfolioCardProps[]>([]);
   const [searchBar, setSearchBar] = useState("");
   
-    // useEffect(() => {
-    //   fetch('/api/project', {
-    //     method : "POST",
-    //     body : JSON.stringify({
-    //       "search" : searchBar
-    //     })
-
-    //   })
-    //     .then(res => res.json())
-    //     .then(data => setProjects(data));
-    // }, [searchBar]);
+    useEffect(() => {
+      fetch('/api/project', {
+        method : "POST",
+        body : JSON.stringify({
+          search : searchBar
+        })
+      })
+        .then(res => res.json())
+        .then(data => {
+          setProjects(data)
+          console.log(data);
+        });
+    }, [searchBar]);
 
     const handleOnTyping = async (e: React.ChangeEvent<HTMLInputElement>) => {
       setSearchBar(e.target.value);
-
-      const data = await fetch('/api/project', {
-        method: "POST",
-        body: JSON.stringify({
-          "search": e.target.value
-        })
-      });
-
-      const project = await data.json() as PortfolioCardProps[];
-
-      setProjects(project);
-      console.log(projects);
     }
   return (
     <main className='bg-zinc-50'>
@@ -61,12 +54,8 @@ function Page() {
 
       </section>
 
-      <div className='grid grid-cols-2 bg-slate-100 w-full'>
-        {!(projects.length > 0)? "" : projects.map(project => (
-          <div key={project.id}>
-            <p>{project.project_title}</p>
-          </div>
-        ))}
+      <div className='grid grid-cols-2 bg-zinc-50 w-full gap-4 sm:px-16 md:px-24 lg:px-40 xl:px-48'>
+        {!(projects.length > 0)? <div>{projects.length}</div> : projects.map(project => (<PortfolioCard index={null} key={project.id} props={project}/>))}
       </div>
 
     </main>

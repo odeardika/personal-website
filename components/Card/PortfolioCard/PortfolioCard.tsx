@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { PortfolioCardProps } from '@/types/portfolioCard';
 import Link from 'next/link';
 
-export default function PortfolioCard({ props, index }: { props: PortfolioCardProps, index: number }) {
+export default function PortfolioCard({ props, index = null }: { props: PortfolioCardProps, index: number | null }) {
 
   const originPosition = [
     'origin-top-left',
@@ -12,7 +12,7 @@ export default function PortfolioCard({ props, index }: { props: PortfolioCardPr
     'origin-bottom-right'
   ]
   return (
-    <div className={`bg-white rounded-[10px] shadow-xl w-100 hover:cursor-pointer duration-300 md:hover:scale-110 transition-transform flex flex-col justify-between ${originPosition[index]}`}>
+    <div className={`bg-white rounded-[10px] shadow-xl w-100 hover:cursor-pointer duration-300  transition-transform flex flex-col justify-between ${index? `${originPosition[index]} md:hover:scale-110` : `` }`}>
 
       <Image src={`${props.project_img}`} width={0} height={0} alt="Project image" unoptimized={true} className='p-4 w-full h-auto rounded-[20px]' />
       <div className='px-4 pb-4 flex flex-col flex-grow justify-between'>
