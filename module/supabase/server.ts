@@ -30,3 +30,12 @@ export async function getProjectHome() {
   const showProject = data ? data.slice(0, 4) : [];
   return showProject;
 }
+
+export async function searchProject(query: string) {
+  const { data, error } = await supabase.from('projects').select().like('project_title', `%${query}%`);
+
+  if (error) {
+    return error;
+  }
+  return data;
+} 
