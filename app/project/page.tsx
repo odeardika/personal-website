@@ -23,7 +23,6 @@ function Page() {
         .then(res => res.json())
         .then(data => {
           setProjects(data)
-          console.log(data);
         });
     }, [searchBar]);
 
@@ -54,7 +53,7 @@ function Page() {
 
       </section>
 
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 lg:gap-10 bg-zinc-50 w-full px-8 sm:px-16 md:px-24 lg:px-40 xl:px-48'>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 lg:gap-10 bg-zinc-50 w-full pb-8 px-8 sm:px-16 md:px-24 lg:px-40 xl:px-48'>
         {!(projects.length > 0)? "" : projects.map(project => (<PortfolioCard index={0} isAnimated={false} key={project.id} props={project}/>))}
       </div>
 
