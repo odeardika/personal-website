@@ -5,10 +5,6 @@ import Header from '@/components/Header/Header';
 import { PortfolioCardProps } from '@/types/portfolioCard';
 import PortfolioCard from '@/components/Card/PortfolioCard/PortfolioCard';
 
-
-
-
-
 function Page() {
   const [projects, setProjects] = useState<PortfolioCardProps[]>([]);
   const [searchBar, setSearchBar] = useState("");
