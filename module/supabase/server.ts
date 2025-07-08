@@ -46,6 +46,6 @@ export async function getProjectById(id : number) {
     return error;
   }
 
-  return data[0];
+  return data;
 
 }
