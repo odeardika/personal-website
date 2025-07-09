@@ -7,15 +7,27 @@ import Link from 'next/link';
 import Footer from '@/components/Footer/Footer';
 import Image from 'next/image';
 
-
 type Res = {
   status: number,
   message: string,
   data: Project | null,
 }
 
-
 function Page({ params }: { params: Promise<{ id: string }> }) {
+  const monthsDict: { [key: string]: string } = {
+    "01": "January",
+    "02": "February",
+    "03": "March",
+    "04": "April",
+    "05": "May",
+    "06": "June",
+    "07": "July",
+    "08": "August",
+    "09": "September",
+    "10": "October",
+    "11": "November",
+    "12": "December"
+  };
   const [data, setData] = useState<Project>();
   const [month, setmonth] = useState("");
   const [year, setYear] = useState("");
@@ -33,12 +45,8 @@ function Page({ params }: { params: Promise<{ id: string }> }) {
           const [y, m] = parseRes.data.created_at.split('-');
           setYear(y);
           setmonth(m);
-
-
         }
       }
-
-
     }
     fetchData();
   }, [params])
@@ -46,6 +54,14 @@ function Page({ params }: { params: Promise<{ id: string }> }) {
     <>
       <Header />
       <section className='bg-zinc-50 py-20 px-8 sm:px-16 md:px-24 lg:px-40 xl:px-48'>
+        <Link className='mb-8 flex items-center gap-2' href={'/project'}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
+          </svg>
+          <span>
+            back to project
+          </span>
+        </Link>
         <h2 className='text-dark_blue text-4xl font-black extra-w'>{data?.project_title}</h2>
 
         <div className='flex py-8 gap-4 items-center'>
@@ -53,7 +69,7 @@ function Page({ params }: { params: Promise<{ id: string }> }) {
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-calendar" viewBox="0 0 16 16">
               <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
             </svg>
-            <p>{`${month} ${year}`}</p>
+            <p>{`${monthsDict[`${month}`]} ${year}`}</p>
           </div>
           <Link href={data?.website_url ? data.website_url : ""} target="_blank" rel="noopener noreferrer" className='flex p-2 border-sky-500 text-sky-500 hover:text-white hover:bg-sky-500 hover:border-sky-500 hover:shadow-lg hover:shadow-sky-500/50 border-2 rounded-md items-center gap-1 hover:-translate-y-2 transition-transform duration-300 '>
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-globe" viewBox="0 0 16 16">
@@ -70,7 +86,7 @@ function Page({ params }: { params: Promise<{ id: string }> }) {
         </div>
 
         <div className='flex justify-center'>
-          <div className='p-4 bg-white shadow-xl rounded-lg w-[80%]'>
+          <div className='p-4 bg-white shadow-xl rounded-lg w-[90%]'>
             <Image src={`${data?.project_img ? data.project_img : ""}`} width={2000} height={2000} alt='' className='w-full' />
           </div>
         </div>
