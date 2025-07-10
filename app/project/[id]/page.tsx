@@ -6,11 +6,29 @@ import Header from '@/components/Header/Header';
 import Link from 'next/link';
 import Footer from '@/components/Footer/Footer';
 import Image from 'next/image';
+import { Skeleton } from '@/components/ui/skeleton';
 
 type Res = {
   status: number,
   message: string,
   data: Project | null,
+}
+
+const ProjectOverviewComponent = ({ text }: { text: string | undefined }) => {
+  if (!text) return <></>
+  const listParagraph = text.split('\n');
+  // console.log(listParagraph);
+  return (
+  <>
+    <div>
+      {listParagraph.map((content, index) => (
+        <p key={index} className='text-base md:text-lg lg:text-xl/9 font-light text-slate-600 my-4'>
+          {content}
+        </p>
+      ))}
+    </div>
+  </>
+  );
 }
 
 function Page({ params }: { params: Promise<{ id: string }> }) {
@@ -31,6 +49,7 @@ function Page({ params }: { params: Promise<{ id: string }> }) {
   const [data, setData] = useState<Project>();
   const [month, setmonth] = useState("");
   const [year, setYear] = useState("");
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -50,19 +69,25 @@ function Page({ params }: { params: Promise<{ id: string }> }) {
     }
     fetchData();
   }, [params])
+
+  const handleLoadingImage = () => {
+    setTimeout(() => {
+      setIsLoaded(true);
+    }, 300)
+  }
   return (
     <>
       <Header />
       <section className='bg-zinc-50 py-20 px-8 sm:px-16 md:px-24 lg:px-40 xl:px-48'>
-        <Link className='mb-8 flex items-center gap-2' href={'/project'}>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+        <Link className='mb-8 flex items-center gap-2 hover:text-sky-500 hover:-translate-x-2 transition-transform duration-300' href={'/project'}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-left" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
           </svg>
           <span>
             back to project
           </span>
         </Link>
-        <h2 className='text-dark_blue text-4xl font-black extra-w'>{data?.project_title}</h2>
+        <h2 className='text-dark_blue text-2xl md:text-4xl font-black extra-w'>{data?.project_title}</h2>
 
         <div className='flex py-8 gap-4 items-center'>
           <div className='flex gap-2 items-center text-slate-600 font-semibold'>
@@ -86,14 +111,25 @@ function Page({ params }: { params: Promise<{ id: string }> }) {
         </div>
 
         <div className='flex justify-center'>
-          <div className='p-4 bg-white shadow-xl rounded-lg w-[90%]'>
-            <Image src={`${data?.project_img ? data.project_img : ""}`} width={2000} height={2000} alt='' className='w-full' />
+          <div className='p-4 bg-white shadow-xl rounded-lg w-full md:w-[90%]'>
+            {!isLoaded &&
+              <div>
+                <Skeleton className="h-[36rem] w-full" />
+              </div>}
+            <Image
+              src={`${data?.project_img ? data.project_img : ""}`}
+              width={2000}
+              height={2000}
+              alt=''
+              className={`${isLoaded ? "" : "hidden"} w-full`}
+              onLoad={handleLoadingImage} />
           </div>
         </div>
 
         <div className='py-8'>
-          <h3 className='text-sky-500 font-black text-4xl my-1'>Project Overview</h3>
-          <p className='text-xl font-light text-slate-400 my-4'>{data?.project_desc}</p>
+          <h3 className='text-sky-500 font-black text-2xl md:text-4xl my-1'>Project Overview</h3>
+          <ProjectOverviewComponent text={data?.project_overview} />
+          {/* <p className='text-base md:text-xl font-light text-slate-400 my-4'>{data?.project_overview}</p> */}
         </div>
       </section>
       <Footer />
@@ -101,4 +137,4 @@ function Page({ params }: { params: Promise<{ id: string }> }) {
   )
 }
 
-export default Page
+export default Page;

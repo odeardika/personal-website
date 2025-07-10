@@ -6,4 +6,5 @@ export type Project = {
     website_url: string | null;
     github_url: string | null;
     project_img: string;
+    project_overview : string | string;
 }
