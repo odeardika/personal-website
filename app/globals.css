@@ -12,6 +12,10 @@
   transform: unset;
 }
 
+svg.sky-color {
+  fill: oklch(68.5% 0.169 237.323);
+}
+
 .blob-1 {
   border-radius: 27% 73% 40% 60% / 34% 22% 78% 66%;
 }
