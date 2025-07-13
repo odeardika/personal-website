@@ -8,19 +8,23 @@ import Footer from '@/components/Footer/Footer';
 import Image from 'next/image';
 import { Skeleton } from '@/components/ui/skeleton';
 import TechStacksIcon from '@/components/Icons/TechStacksIcon/TechStacksIcon';
+import { TechStack } from '@/types/techstack';
 
 type Res = {
   status: number,
   message: string,
   data: Project | null,
-}
+};
 
-const icons = [1,2,3,4,5];
+type ResSkill = {
+  status : number,
+  message : string,
+  data : TechStack[] | null,
+}
 
 const ProjectOverviewComponent = ({ text }: { text: string | undefined }) => {
   if (!text) return <></>
   const listParagraph = text.split('\n');
-  // console.log(listParagraph);
   return (
   <>
     <div>
@@ -53,12 +57,15 @@ function Page({ params }: { params: Promise<{ id: string }> }) {
   const [month, setmonth] = useState("");
   const [year, setYear] = useState("");
   const [isLoaded, setIsLoaded] = useState(false);
+  const [tech, setTech] = useState<TechStack[]>();
 
   useEffect(() => {
     const fetchData = async () => {
       const { id } = await params;
       const res = await fetch(`/api/project/${id}`);
       const parseRes: Res = await res.json();
+
+      // Handle Project's Data
       if (parseRes.message === "Id not found") {
 
       } else {
@@ -69,7 +76,20 @@ function Page({ params }: { params: Promise<{ id: string }> }) {
           setmonth(m);
         }
       }
+
+      // Handle Project's Technology List
+      const resSkill = await fetch(`/api/skill/${id}`);
+      const parseResSkill : ResSkill = await resSkill.json();
+      if (parseResSkill.message === "Id not found") {
+
+      } else {
+        if (parseResSkill.data) {
+          setTech(parseResSkill.data);
+        }
+      }
+    
     }
+
     fetchData();
   }, [params])
 
@@ -137,7 +157,7 @@ function Page({ params }: { params: Promise<{ id: string }> }) {
         <div className='py-8'>
           <h3 className='text-sky-500 font-black text-2xl md:text-4xl my-1'>Technology Used</h3>
           <div className='p-10 shadow-xl bg-white rounded-md mt-4 flex gap-6 flex-wrap'>
-            {icons.map(item => <TechStacksIcon key={item} iconId={item}/>)}
+            {tech? tech.map(item => <TechStacksIcon key={item.id} iconId={item.icon_id}/>) : <></>}
           </div>
         </div>
       </section>

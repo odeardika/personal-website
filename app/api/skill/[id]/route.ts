@@ -1,7 +1,5 @@
 import { getProjectSkills } from "@/module/supabase/server";
 import { TechStack } from "@/types/techstack";
-// import { Project } from "@/types/project";
-
 
 export async function GET(
     request: Request,
@@ -19,9 +17,6 @@ export async function GET(
         data : null
       })
     }
-
-
-
 
     return Response.json({
       status : 200,
