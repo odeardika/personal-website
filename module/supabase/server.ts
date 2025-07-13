@@ -49,3 +49,13 @@ export async function getProjectById(id : number) {
   return data;
 
 }
+
+export async function getProjectSkills(projectId : number) {
+  const { data, error } = await supabase.from('project_tech_stack').select().eq('project_id', projectId);
+
+  if(error) {
+    return error;
+  }
+
+  return data;
+}
