@@ -8,7 +8,7 @@ import Footer from '@/components/Footer/Footer';
 import Image from 'next/image';
 import { Skeleton } from '@/components/ui/skeleton';
 import TechStacksIcon from '@/components/Icons/TechStacksIcon/TechStacksIcon';
-import { TechStack } from '@/types/techstack';
+import { TechIcon } from '@/types/techstack';
 
 type Res = {
   status: number,
@@ -19,7 +19,7 @@ type Res = {
 type ResSkill = {
   status : number,
   message : string,
-  data : TechStack[] | null,
+  data : TechIcon[] | null,
 }
 
 const ProjectOverviewComponent = ({ text }: { text: string | undefined }) => {
@@ -57,7 +57,7 @@ function Page({ params }: { params: Promise<{ id: string }> }) {
   const [month, setmonth] = useState("");
   const [year, setYear] = useState("");
   const [isLoaded, setIsLoaded] = useState(false);
-  const [tech, setTech] = useState<TechStack[]>();
+  const [tech, setTech] = useState<TechIcon[]>();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -157,7 +157,7 @@ function Page({ params }: { params: Promise<{ id: string }> }) {
         <div className='py-8'>
           <h3 className='text-sky-500 font-black text-2xl md:text-4xl my-1'>Technology Used</h3>
           <div className='p-10 shadow-xl bg-white rounded-md mt-4 flex gap-6 flex-wrap'>
-            {tech? tech.map(item => <TechStacksIcon key={item.id} iconId={item.icon_id}/>) : <></>}
+            {tech? tech.map(item => <TechStacksIcon key={item.id} name={item.tech_name} path={item.path}/>) : <></>}
           </div>
         </div>
       </section>

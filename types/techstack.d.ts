@@ -1,3 +1,10 @@
+export type TechIcon = {
+    id : number;
+    created_at : string;
+    tech_name : string;
+    path : string;
+}
+
 export type TechStack = {
     id : number;
     created_at : string;

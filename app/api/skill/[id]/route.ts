@@ -1,5 +1,5 @@
 import { getProjectSkills } from "@/module/supabase/server";
-import { TechStack } from "@/types/techstack";
+import { TechIcon } from "@/types/techstack";
 
 export async function GET(
     request: Request,
@@ -7,8 +7,8 @@ export async function GET(
   {
     const { id } = await params;
 
-    const data = await getProjectSkills(Number(id)) as TechStack[];
-    console.log(data);
+    const data = await getProjectSkills(Number(id)) as TechIcon[];
+
     // handle if id is invalid or not on database
     if (data.length == 0) {
       return Response.json({
