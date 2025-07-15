@@ -49,3 +49,25 @@ export async function getProjectById(id : number) {
   return data;
 
 }
+
+export async function getProjectSkills(projectId : number) {
+  const { data, error } = await supabase.from('project_tech_stack').select().eq('project_id', projectId);
+
+  if(error) {
+    return error;
+  }
+
+  // get the icons property
+  const icons = await Promise.all(data.map( async (item) => {
+    const temp = await supabase.from('tech_stack_icons').select().eq('id', item.icon_id);
+    if(temp.data) {
+      const icon = temp.data[0];
+      return icon;
+      
+    }
+    return temp;
+  }))
+
+  return icons;
+  
+}
