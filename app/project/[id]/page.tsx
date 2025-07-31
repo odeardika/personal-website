@@ -9,6 +9,7 @@ import Image from 'next/image';
 import { Skeleton } from '@/components/ui/skeleton';
 import TechStacksIcon from '@/components/Icons/TechStacksIcon/TechStacksIcon';
 import { TechIcon } from '@/types/techstack';
+import ProjectNavigation from '@/components/ProjectNavigitaion/ProjectNavigation';
 
 type Res = {
   status: number,
@@ -58,10 +59,12 @@ function Page({ params }: { params: Promise<{ id: string }> }) {
   const [year, setYear] = useState("");
   const [isLoaded, setIsLoaded] = useState(false);
   const [tech, setTech] = useState<TechIcon[]>();
+  const [currentId, setCurrentId] = useState<number>()
 
   useEffect(() => {
     const fetchData = async () => {
       const { id } = await params;
+      setCurrentId(Number(id));
       const res = await fetch(`/api/project/${id}`);
       const parseRes: Res = await res.json();
 
@@ -160,6 +163,8 @@ function Page({ params }: { params: Promise<{ id: string }> }) {
             {tech? tech.map(item => <TechStacksIcon key={item.id} name={item.tech_name} path={item.path}/>) : <></>}
           </div>
         </div>
+
+        {currentId? <ProjectNavigation currentId={currentId}/> : ""}
       </section>
       <Footer />
     </>
