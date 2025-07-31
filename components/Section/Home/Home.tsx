@@ -35,8 +35,8 @@ export default function Home() {
                 const currentIndex = blobShapes.indexOf(prev);
                 return blobShapes[(currentIndex + 1) % blobShapes.length];
             })
-            
-            
+
+
         }, 1500);
         const interval2 = setInterval(() => {
             setBlobRadius2(prev => {
@@ -44,7 +44,7 @@ export default function Home() {
                 return blobShapes2[(currentIndex + 1) % blobShapes2.length];
             })
         }, 1000)
-            
+
         return () => {
             clearInterval(interval);
             clearInterval(interval2);
@@ -54,44 +54,47 @@ export default function Home() {
     return (
         <section
             data-aos="fade-up"
-            className="flex flex-col-reverse px-10 md:flex-row md:px-24 xl:px-48 items-center gap-4 lg:gap-0 md:h-screen py-4 bg-zinc-50">
+            className='flex justify-center bg-zinc-50'
+        >
+            <div
+                className=" max-w-screen-2xl flex flex-col-reverse px-10 md:flex-row md:px-24 xl:px-48 items-center gap-4 lg:gap-0 md:h-screen py-4">
 
-            <div className="basis-7/12 flex flex-col gap-6 ">
-                <div className="flex flex-col gap-2">
-                    <h1 className="text-3xl md:text-3xl lg:text-5xl text-dark_blue mid-extra-w md:extra-w font-extrabold lg:font-semibold">Hi, I’m Ode <span className='wave'>👋</span></h1>
-                    <div>
-                        <p className="text-3xl md:text-3xl lg:text-4xl font-thin text-dark_blue">A passionate software developer who loves</p>
-                        <div className='text-3xl md:text-3xl lg:text-5xl text-sky-400 font-black less-extra-w'>
-                            <TypeAnimation
-                                sequence={[
-                                    // Same substring at the start will only be typed once, initially
-                                    'building website',
-                                    1000,
-                                    'building applications',
-                                    1000,
-                                    'building software',
-                                    1000,
-                                    'building tools',
-                                    1000,
-                                ]}
-                                speed={50}
-                                repeat={Infinity}
-                            />
+                <div className="basis-7/12 flex flex-col gap-6 ">
+                    <div className="flex flex-col gap-2">
+                        <h1 className="text-3xl md:text-3xl lg:text-5xl text-dark_blue mid-extra-w md:extra-w font-extrabold lg:font-semibold">Hi, I’m Ode <span className='wave'>👋</span></h1>
+                        <div>
+                            <p className="text-3xl md:text-3xl lg:text-4xl font-thin text-dark_blue">A passionate software developer who loves</p>
+                            <div className='text-3xl md:text-3xl lg:text-5xl text-sky-400 font-black less-extra-w'>
+                                <TypeAnimation
+                                    sequence={[
+                                        // Same substring at the start will only be typed once, initially
+                                        'building website',
+                                        1000,
+                                        'building applications',
+                                        1000,
+                                        'building software',
+                                        1000,
+                                        'building tools',
+                                        1000,
+                                    ]}
+                                    speed={50}
+                                    repeat={Infinity}
+                                />
+                            </div>
                         </div>
+                        <p className="text-base md:text-base lg:text-xl font-thin text-slate-400">I design, build, and maintain applications that are scalable, efficient, and user-friendly.</p>
                     </div>
-                    <p className="text-base md:text-base lg:text-xl font-thin text-slate-400">I design, build, and maintain applications that are scalable, efficient, and user-friendly.</p>
+                    <div>
+                        <motion.button
+                            whileHover={{ scale: 1.2 }}
+                            whileTap={{ scale: 0.8, }}
+                            className="bg-dark_blue text-white py-4 px-6 text-base font-semibold rounded-2xl">
+                            Say Hello
+                        </motion.button>
+                    </div>
                 </div>
-                <div>
-                    <motion.button
-                        whileHover={{ scale: 1.2 }}
-                        whileTap={{ scale: 0.8, }}
-                        className="bg-dark_blue text-white py-4 px-6 text-base font-semibold rounded-2xl">
-                        Say Hello
-                    </motion.button>
-                </div>
-            </div>
 
-            <div className="flex justify-end grow">
+                <div className="flex justify-end grow">
                     <div
                         style={{
                             borderRadius: blobRadius2,
@@ -103,9 +106,9 @@ export default function Home() {
                             }}
                             className="border-2 blob border-gray_blue object-cover h-72 w-52 lg:h-96 lg:w-72 xl:h-96 xl:w-72 bg-white" src={profile} alt="profile" width={700} height={700} />
                     </div>
-                
-            </div>
 
+                </div>
+            </div>
         </section>
     )
 }
