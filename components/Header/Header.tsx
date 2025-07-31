@@ -9,9 +9,8 @@ export default function Header() {
   const menuList: MenuList[] = [
     { id: 1, name: 'Home', href: '/' },
     { id: 2, name: 'About', href: '/#about-section' },
-    // { id: 3, name: 'Skills', href: '#skill-section' },
     { id: 3, name: 'Project', href: '/#project-section' },
-    
+
   ];
 
   // check is page on y-0 or not
@@ -37,11 +36,12 @@ export default function Header() {
     setIsSidebarOpen((prevState) => !prevState);
   }
   return (
-    <header className={`flex justify-between sticky top-0 bg-white ${isPageOnTop? "" : "shadow-sm bg-opacity-75"} px-8 sm:px-16 md:px-24 lg:px-40 xl:px-48 py-8`}>
+    <header className={`sticky top-0 bg-white ${isPageOnTop? "" : "shadow-sm bg-opacity-75"} py-8`}>
+      <div className="flex justify-between max-w-screen-2xl mx-auto px-8 sm:px-16 md:px-24 lg:px-40 xl:px-48">
         <div className="flex basis-1/2">
           <h3 className="text-2xl font-semibold">odeardika.</h3>
         </div>
-        
+
         <div>
           <div className='relative z-50'>
             <HamburgerButton onClick={handleHamburgerButtonClick} />
@@ -49,8 +49,7 @@ export default function Header() {
           <Navbar menuList={menuList} />
           <Sidebar isOpen={isSidebarOpen} menuList={menuList} />
         </div>
-
-
+      </div>
     </header>
   )
 }

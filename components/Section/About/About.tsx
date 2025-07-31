@@ -1,10 +1,7 @@
 'use client';
 import React from 'react';
-// import Image from 'next/image';
-// import profile from "@/public/assets/images/about_img.png";
 import Link from 'next/link';
 import { motion } from 'motion/react';
-// import { style } from 'motion/react-client';
 
 export default function About() {
   const skills = [
