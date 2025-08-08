@@ -14,7 +14,9 @@ export default function Project() {
       .then(data => setProject(data));
   }, [])
   return (
-    <section data-aos="fade-up" id='project-section' className='flex flex-col items-center justify-center gap-8 py-24 bg-zinc-50'>
+    <section 
+    // data-aos="fade-up" 
+    id='project-section' className='flex flex-col items-center justify-center gap-8 py-24 bg-zinc-50 z-20'>
         <div className="max-w-screen-2xl mx-auto w-full">
             <div className='flex flex-col gap-2 md:gap-4 items-center'>
                 <h2 className='font-semibold text-2xl md:text-4xl lg:text-5xl text-dark_blue'>My Portfolio</h2>
