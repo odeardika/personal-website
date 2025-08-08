@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Aos from "@/components/animated-on-scroll";
 import { Poppins } from 'next/font/google';
-import { url } from "inspector";
 
 export const metadata: Metadata = {
   title: "odeardika.",
