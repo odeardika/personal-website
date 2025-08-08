@@ -33,9 +33,9 @@ export default function About() {
           <div className='flex flex-col gap-5 md:gap-10 items-center md:items-start w-[100%] md:w-[55%] lg:w-[53%] justify-between h-full md:py-16'>
 
             <div className='flex flex-col gap-3 bg-white md:bg-inherit rounded-lg shadow-lg md:shadow-none p-4'>
-              <h3 className='text-justify font-semibold text-slate-900 text-2xl md:text-2xl lg:text-4xl'>I&apos;m Ode Ardika</h3>
+              <h3 className='text-justify font-semibold text-slate-900 text-2xl md:text-2xl lg:text-4xl'>I&apos;m Software Developer</h3>
 
-              <p className='text-slate-500 md:text-slate-400 text-base md:text-base lg:text-lg'>A software developer with a background in Computer Science, passionate about turning ideas into real, working applications. I specialize in building full-stack web apps and other software with a strong focus on clean code, elegant design, and solving real problems. Want to know more? <Link
+              <p className='text-slate-500 md:text-slate-400 text-base md:text-base lg:text-lg'>with a background in Computer Science, passionate about turning ideas into real, working applications. I specialize in building full-stack web apps and other software with a strong focus on clean code, elegant design, and solving real problems. Want to know more? <Link
                 className=' text-slate-700 inline-block bg-gradient-to-r from-sky-500 to-sky-500 bg-[length:0%_2px] bg-left-bottom bg-no-repeat hover:bg-[length:100%_2px] hover:text-sky-500 transition-[background-size,color] duration-500 ease-out cursor-pointer'
                 href='https://drive.google.com/file/d/1Jr0f-HzK3KHaufRidvsMo1710aICksWa/view?usp=sharing'
                 target='_blank'
