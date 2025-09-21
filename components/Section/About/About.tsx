@@ -15,7 +15,7 @@ export default function About() {
   return (
     <section
       data-aos="fade-up"
-      className='flex flex-col items-center gap-4 relative'
+      className='flex flex-col items-center gap-4 relative scroll-mt-24'
       id='about-section'
     >
       <div className='absolute flex-grow w-full h-full z-0 flex items-end justify-center overflow-hidden'>

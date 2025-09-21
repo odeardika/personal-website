@@ -12,6 +12,10 @@
   transform: unset;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 svg.sky-color {
   fill: oklch(68.5% 0.169 237.323);
 }
