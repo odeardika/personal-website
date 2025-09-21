@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Aos from "@/components/animated-on-scroll";
 import { Poppins } from 'next/font/google';
@@ -8,7 +8,6 @@ export const metadata: Metadata = {
   description: "Personal Website to show my personality and my work story",
   keywords: "programming, web development, software engineering, frontend, backend, TypeScript, React, Next.js, JavaScript, coding, developer, portfolio, UI/UX, full stack, technology",
   authors: [{ name: "Ode Ardika", url: "www.linkedin.com/in/odeardika" }],
-  viewport: "width=device-width, initial-scale=1",
   openGraph : {
     url: "https://www.odeardika.my.id/",
     siteName : "Ode Ardika Personal Website",
@@ -36,6 +35,11 @@ export const metadata: Metadata = {
       {url: '/assets/images/icon-180.png', sizes: '180x180'}
     ],
   }
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 const poppins = Poppins({
