@@ -1,26 +1,25 @@
-import { getProjectSkills } from "@/module/supabase/server";
-import { TechIcon } from "@/types/techstack";
+import { getProjectSkills } from "@/module/data/projects";
+import type { TechIcon } from "@/types/techstack";
 
 export async function GET(
     request: Request,
-  { params }: { params: Promise<{ id: string }> }) 
-  {
+  { params }: { params: Promise<{ id: string }> }
+): Promise<Response> {
     const { id } = await params;
 
-    const data = await getProjectSkills(Number(id)) as TechIcon[];
+    const data = getProjectSkills(Number(id)) as TechIcon[];
 
-    // handle if id is invalid or not on database
-    if (data.length == 0) {
+    if (data.length === 0) {
       return Response.json({
-        status : 404,
-        message : "Id not found",
-        data : null
-      })
+        status: 404,
+        message: "Id not found",
+        data: null
+      });
     }
 
     return Response.json({
-      status : 200,
-      message : 'success',
-      data : data
+      status: 200,
+      message: "success",
+      data: data
     });
 }

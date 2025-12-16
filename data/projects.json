@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "created_at": "2025-07-01T05:11:13.374Z",
+    "project_title": "Environment Songs Finder",
+    "project_desc": "Environment Songs Finder is a machine learning web app built This project was developed as part of my presentation at a seminar. It uses a Multinomial Naive Bayes model to classify whether a song is about environmental topics based solely on its lyrics.",
+    "website_url": "https://enviroment-songs-finder.streamlit.app/",
+    "github_url": "https://github.com/odeardika/enviroment-songs-finder",
+    "project_img": "https://raw.githubusercontent.com/odeardika/personal-project-img/refs/heads/main/images/1/0.webp",
+    "project_overview": "Environment Songs Finder is a web-based application designed to help identify whether a song's lyrics are thematically focused on environmental preservation. Built for a seminar speaker (public speaker), the project uses a Multinomial Naive Bayes classification model to analyze lyrics and determine whether the song's topic aligns with themes related to saving the environment. Users can input any song lyrics, and the system will return a prediction on its relevance to environmental awareness.\nI developed this project independently, handling both the machine learning pipeline and web deployment. The app was created using Streamlit for a simple and interactive interface. One of the main challenges was obtaining and labeling a reliable dataset of song lyrics, since most publicly available lyrics online are not pre-categorized by topic. To address this, I manually curated and labeled a dataset based on known environmental songs and contrasted them with general songs, ensuring a balanced classification model.\nThrough this project, I deepened my understanding of natural language processing and model development, especially in text classification using Naive Bayes. More importantly, I learned how to work through data challenges such as labeling and dataset validation. It also strengthened my ability to translate a machine learning model into a usable web tool, making my work accessible to non-technical users in a real-world setting.",
+    "tech_stack_ids": [9, 11, 10, 13, 12]
+  },
+  {
+    "id": 2,
+    "created_at": "2025-07-01T05:13:26.984Z",
+    "project_title": "Pengklasifikasi Lirik",
+    "project_desc": "Pengklasifikasi Lirik is a machine learning-based project developed for my undergraduate thesis. It compares the performance of Multinomial Naive Bayes and Support Vector Machine (SVM) with a linear kernel in classifying songs based on their lyrics. The app allows users to input lyrics and receive an emotion-based classification result.",
+    "website_url": "https://lyrics-classifier.odeardika.my.id/",
+    "github_url": "https://github.com/odeardika/lyrics-classifier",
+    "project_img": "https://raw.githubusercontent.com/odeardika/personal-project-img/refs/heads/main/images/2/0.webp",
+    "project_overview": "Pengklasifikasi Lirik is a web-based application developed as part of my undergraduate thesis. The project compares the effectiveness of two text classification algorithms—Multinomial Naive Bayes and Support Vector Machine (SVM) with a linear kernel—in classifying songs based on their lyrics. The goal is to evaluate the performance of both models in identifying the thematic or emotional content of song lyrics, using lyrics as the primary data input.\n\nI worked independently on this project, taking on the roles of both machine learning engineer and fullstack web developer. The frontend was built using Next.js, the backend using Flask, and the app was deployed through Vercel. One of the biggest challenges was obtaining a high-quality labeled dataset. While many song lyrics are publicly available, they are not labeled by emotion or theme. To solve this, I manually collected a dataset and labeled it using the NRC Emotion Lexicon from the National Research Council Canada, which allowed me to assign emotional categories based on keyword associations.\n\nThis project significantly enhanced my skills in natural language processing (NLP) and gave me practical experience in evaluating and comparing machine learning models in real-world conditions. I also improved my ability to integrate AI models into web applications and gained a deeper understanding of data preparation, especially around ethical and accurate labeling. Additionally, working on both frontend and backend components sharpened my fullstack development capabilities and reinforced the importance of model usability in user-facing tools.",
+    "tech_stack_ids": [3, 1, 4, 17, 5, 7, 9, 12, 13, 10]
+  },
+  {
+    "id": 3,
+    "created_at": "2025-07-01T05:28:07.129Z",
+    "project_title": "Pesona Kubu",
+    "project_desc": "Pesona Kubu is a full-stack web project that showcases local MSMEs, tourist attractions, and cultural heritage in Kubu Village. The site was built to support digital promotion and community engagement through accessible online media.",
+    "website_url": "https://pesona-kubu.vercel.app/",
+    "github_url": "https://github.com/odeardika/pesona-kubu",
+    "project_img": "https://raw.githubusercontent.com/odeardika/personal-project-img/refs/heads/main/images/3/0.webp",
+    "project_overview": "Pesona Kubu is a web-based platform designed to showcase the local potential of Kubu Village, including its micro, small, and medium enterprises (MSMEs), tourist attractions, and cultural heritage. The project aims to digitally promote the village's charm and provide exposure for local businesses and destinations. It serves as a centralized hub for both visitors and residents to explore what Kubu has to offer.\n\nI developed the entire website as a fullstack developer, while the rest of the team focused on content curation and information gathering. The site was built using Next.js for the frontend, Hygraph as the headless CMS, and deployed through Vercel. To ensure content accuracy and relevance, our team conducted surveys and visited various locations in the village to collect authentic data and media materials.\n\nOne of the main challenges was collaborating across disciplines—translating the needs and perspectives of non-IT teammates into technical solutions while maintaining the project's vision. I also had to ensure the system was intuitive enough for future content updates by non-technical users. Through this project, I gained hands-on experience not only in fullstack web development but also in cross-functional teamwork, particularly in communicating and collaborating with people outside the tech field.",
+    "tech_stack_ids": [4, 3, 5, 17, 1, 2, 19]
+  },
+  {
+    "id": 4,
+    "created_at": "2025-07-01T05:30:50.497Z",
+    "project_title": "Tech Glimpse",
+    "project_desc": "Tech Glimpse is a personal web application built to streamline how I stay updated with the latest in technology. The platform fetches daily tech-related articles using the HackerNews API and automatically sends a curated summary to my email inbox. Designed as a lightweight, hands-off tool for daily tech inspiration, the app simplifies tech article discovery by integrating it into my email routine.",
+    "website_url": "https://tech-glimpse.odeardika.my.id/",
+    "github_url": "https://github.com/odeardika/Tech-Glimpse",
+    "project_img": "https://raw.githubusercontent.com/odeardika/personal-project-img/refs/heads/main/images/4/0.webp",
+    "project_overview": "Tech Glimpse is a personal web application built to streamline how I stay updated with the latest in technology. The platform fetches daily tech-related articles using the HackerNews API and automatically sends a curated summary to my email inbox. Designed as a lightweight, hands-off tool for daily tech inspiration, the app simplifies tech article discovery by integrating it into my email routine.\n\nI developed the entire project independently as a fullstack developer using Next.js with React and Tailwind CSS for the frontend and backend. Articles are retrieved and displayed on the site, and a scheduled task sends daily updates via email. One of the main technical challenges was setting up a scheduled task (cron job) on Vercel, which doesn't natively support background tasks. I solved this by using a custom API route triggered by an external GET request. Another challenge was securely configuring Nodemailer to send emails through Gmail, which I resolved using 2-Factor Authentication and app passwords.\n\nThrough this project, I deepened my understanding of backend scheduling strategies in serverless environments, secure email handling with Nodemailer, and working with third-party APIs. It also sharpened my fullstack development workflow and gave me experience in building a small-scale automation tool that integrates well into daily routines. Overall, Tech Glimpse helped reinforce the value of automating tasks to improve personal productivity.",
+    "tech_stack_ids": [3, 6, 14, 5]
+  },
+  {
+    "id": 5,
+    "created_at": "2025-07-30T04:50:40.098Z",
+    "project_title": "Dunia Hewan Buah",
+    "project_desc": "Dunia Hewan Buah is an interactive educational website designed to help children learn about animals and fruits in a fun and engaging way. Developed as a freelance project from a client, the platform focuses on delivering simple yet visually appealing content, making it easy for kids to explore and interact with educational materials. The goal of the project is to combine learning and play through a digital medium that is accessible on both desktop and mobile devices.",
+    "website_url": "https://www.duniahewanbuah.com/",
+    "github_url": null,
+    "project_img": "https://raw.githubusercontent.com/odeardika/personal-project-img/refs/heads/main/images/5/0.webp",
+    "project_overview": "Dunia Hewan Buah is an interactive educational website designed to help children learn about animals and fruits in a fun and engaging way. Developed as a freelance project from a client, the platform focuses on delivering simple yet visually appealing content, making it easy for kids to explore and interact with educational materials. The goal of the project is to combine learning and play through a digital medium that is accessible on both desktop and mobile devices.\n\nIn this project, I contributed as a frontend developer, responsible for bringing the interactive UI and visual design to life using SvelteKit and vanilla CSS. One of the key challenges was ensuring the website's interface was intuitive and engaging for young users. I also needed to ensure that interactive elements like clickable images and simple animations worked seamlessly across devices. To address these, I implemented a clean, touch-friendly layout with vibrant visuals and utilized Svelte's reactivity for smooth interactions, while optimizing assets for performance.\n\nThrough this project, I enhanced my skills in building interactive and responsive user interfaces with SvelteKit, as well as designing user experiences specifically for children. I also gained practical knowledge in handling performance optimization, ensuring the website remained fast and accessible even on lower-end devices. This experience sharpened my frontend development practices, particularly in crafting educational web applications.",
+    "tech_stack_ids": [15, 20, 21, 1]
+  },
+  {
+    "id": 6,
+    "created_at": "2025-07-30T05:00:40.455Z",
+    "project_title": "Rayaska Landing Page",
+    "project_desc": "Rayaska Landing Page is a business-focused website designed to showcase Rayaska's services and offerings in a clear and engaging manner. The goal of the landing page is to provide visitors with a quick overview of what Rayaska provides, highlighting key benefits and driving user engagement through a clean, modern layout.",
+    "website_url": "https://www.rayaska.com/",
+    "github_url": null,
+    "project_img": "https://raw.githubusercontent.com/odeardika/personal-project-img/refs/heads/main/images/6/0.webp",
+    "project_overview": "Rayaska Landing Page is a business-focused website designed to showcase Rayaska's services and offerings in a clear and engaging manner. The goal of the landing page is to provide visitors with a quick overview of what Rayaska provides, highlighting key benefits and driving user engagement through a clean, modern layout.\n\nIn this project, I worked as a frontend developer, responsible for translating the business's requirements into a responsive and visually appealing web interface. The site was developed using SvelteKit with Flowbite components and styled with TailwindCSS. One of the main challenges was ensuring the layout effectively communicated Rayaska's value propositions while maintaining a pixel-perfect design across all screen sizes. Additionally, integrating Flowbite's pre-built components while applying custom styles to align with Rayaska's branding required careful attention to detail.\n\nThrough this project, I honed my skills in responsive design, component customization, and structuring content to meet business objectives. I also gained practical experience in rapidly developing landing pages using modern frontend tools while ensuring brand consistency and user-friendly navigation. This project emphasized the importance of aligning technical implementation with business goals for maximum impact.",
+    "tech_stack_ids": [15, 5, 1, 21, 20]
+  }
+]
